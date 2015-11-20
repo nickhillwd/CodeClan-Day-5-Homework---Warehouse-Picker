@@ -53,8 +53,8 @@ ITEMS = [
 # end
 
 def item_at_bay(bay_location)
-  # puts "search for a bay (example B5): "
-  # search_input = gets.chomp.downcase.to_sym
+  #puts "search for a bay (example B5): "
+  #bay_loaction = gets.chomp.downcase.to_sym
   ITEMS.select { |item| item[bay_location] }.first[bay_location]
 end
 
