@@ -1,50 +1,76 @@
+require 'pry'
+require 'pry-byebug'
+
+
 ITEMS = [
 
- {
-    a1: "needle",
-    a2: "stop sign",
-    a3: "blouse",
-    a4: "hanger",
-    a5: "rubber duck",
-    a6: "shovel",
-    a7: "bookmark",
-    a8: "leg warmers",
-    a9: "glow stick",
-    a10: "rubber band"
-  },
+  { bay: "a1", 
+    item: "needle" },
+  { bay: "a2", 
+    item: "stop sign"},
+  { bay: "a3", 
+    item: "blouse"},
+  { bay: "a4", 
+    item: "hanger" },
+  { bay: "a5", 
+    item: "rubber duck"},
+  { bay: "a6", 
+    item: "shovel"},
+  { bay: "a7", 
+    item: "bookmark"},
+  { bay: "a8", 
+    item: "model car"},
+  { bay: "a9", 
+    item: "glow stick"},
+  { bay: "a10", 
+    item: "rubber band"},
 
- {
-    b1: "tyre swing",
-    b2: "sharpie",
-    b3: "picture frame",
-    b4: "photo album",
-    b5: "nail filer",
-    b6: "tooth paste",
-    b7: "bath fizzers",
-    b8: "tissue box",
-    b9: "deoderant",
-    b10: "cookie jar"
-  },
+  { bay: "b1", 
+    item: "tyre swing"},
+  { bay: "b2", 
+    item: "sharpie"},
+  { bay: "b3", 
+    item: "picture frame"},
+  { bay: "b4", 
+    item: "photo album"},
+  { bay: "b5", 
+    item: "nail filer"},
+  { bay: "b6", 
+    item: "tooth paste"},
+  { bay: "b7", 
+    item: "bath fizzers"},
+  { bay: "b8", 
+    item: "tissue box"},
+  { bay: "b9", 
+    item: "deoderant"},
+  { bay: "b10", 
+    item: "cookie jar"},
 
-  {
-    c1: "rusty nail",
-    c2: "drill press",
-    c3: "chalk",
-    c4: "word search",
-    c5: "thermometer",
-    c6: "face wash",
-    c7: "paint brush",
-    c8: "candy wrapper",
-    c9: "shoe lace",
-    c10: "leg warmers"
-  }
+  { bay: "c1", 
+    item: "rusty nail"},
+  { bay: "c2", 
+    item: "drill press"},
+  { bay: "c3", 
+    item: "chalk"},
+  { bay: "c4", 
+    item: "word search"},
+  { bay: "c5", 
+    item: "thermometer"},
+  { bay: "c6", 
+    item: "face wash"},
+  { bay: "c7", 
+    item: "paint brush"},
+  { bay: "c8", 
+    item: "candy wrapper"},
+  { bay: "c9", 
+    item: "shoe lace"},
+  { bay: "c10", 
+    item: "leg warmers"}
 ]
 
 # Given a bay, returns the item in that bay
 
-# def item_at_bay
-#   puts "Search for a bay (example B5):"
-#   search_input = gets.chomp.downcase
+# def item_at_bay(search_input)
 #   search = 0
 #   until search == search_input
 #     search += 1
@@ -52,10 +78,35 @@ ITEMS = [
 #   end
 # end
 
-def item_at_bay(bay_location)
-  #puts "search for a bay (example B5): "
-  #bay_loaction = gets.chomp.downcase.to_sym
-  ITEMS.select { |item| item[bay_location] }.first[bay_location]
+def item_at_bay(bay_index)
+  for entries in ITEMS
+    if entries[:bay] == bay_index
+      return entries[:item]
+    end
+  end
 end
 
+# def item_at_bay(bay_location)
+#   ITEMS.fetch(bay_location)
+# end
 
+# Given an item return the bay that it is in.
+
+# def item_at_name()
+#   puts "Enter item to find loaction (example Flying saucer): "
+#   user_input = gets.chomp.downcase
+#   ITEMS.select { |bay, name| name = user_input }
+# end
+
+#binding.pry
+# def item_at_name(name_location)
+#   ITEMS.select { |bay, item| bay[name_location] }.class
+# end
+
+def item_at_name(item_index)
+  for entries in ITEMS
+    if entries[:item] == item_index
+      return entries[:bay]
+    end
+  end
+end

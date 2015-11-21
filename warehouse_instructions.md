@@ -61,9 +61,11 @@ Single bay/item
 Given a bay, returns the item in that bay
 
 given "b5", should return 'nail filer'
+
 Given an item return the bay that it is in.
 
 given "nail filer" should return "b5"
+
 Multiple bays/items
 
 Given a list of bays, list the items in those bays
