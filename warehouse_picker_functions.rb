@@ -82,6 +82,8 @@ def item_at_bay(bay_index)
   for entries in ITEMS
     if entries[:bay] == bay_index
       return entries[:item]
+    else
+      return "No such location"
     end
   end
 end
@@ -107,6 +109,39 @@ def item_at_name(item_index)
   for entries in ITEMS
     if entries[:item] == item_index
       return entries[:bay]
+    else
+      return "No such item"
     end
   end
 end
+
+# Multiple bays/items
+
+# Given a list of bays, list the items in those bays
+
+def multi_item_at_bay(multi_bay_index)
+  for entries in ITEMS
+    if entries[:bay] == multi_bay_index[0]
+      return entries[:item]
+      item_1 = entries[:item]
+    end
+  end
+  for entries in ITEMS
+    if entries[:bay] == multi_bay_index[1]
+      return entries[:item]
+      item_2 = entries[:item]
+    end
+  end
+  for entries in ITEMS
+    if entries[:bay] == multi_bay_index[2]
+      return entries[:item]
+      item_3 = entries[:item]
+    end
+  end
+end
+
+
+
+
+
+
