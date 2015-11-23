@@ -33,7 +33,7 @@ find_item_name = item_at_name(user_input2)
 # return the list of items and print to the console/user
 
 puts "Enter item locations (example B5, A1, C3): "
-user_input3 = gets.chomp.downcase.split(", ")
+user_input3 = gets.chomp.downcase#.split(", ")
 
 # puts user_input3.class
 

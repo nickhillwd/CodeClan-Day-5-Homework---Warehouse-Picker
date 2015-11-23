@@ -119,23 +119,16 @@ end
 
 # Given a list of bays, list the items in those bays
 
-def multi_item_at_bay(multi_bay_index)
+def multi_item_at_bay(multi_bay_index_input)
+  multi_bay_index = multi_bay_index_input.split(", ")
   for entries in ITEMS
-    if entries[:bay] == multi_bay_index[0]
-      return entries[:item]
-      item_1 = entries[:item]
-    end
-  end
-  for entries in ITEMS
-    if entries[:bay] == multi_bay_index[1]
-      return entries[:item]
-      item_2 = entries[:item]
-    end
-  end
-  for entries in ITEMS
-    if entries[:bay] == multi_bay_index[2]
-      return entries[:item]
-      item_3 = entries[:item]
+    until i == multi_bay_index.length 
+      if [:bay] == multi_bay_index[i]
+        return entries[:item]
+      else
+        return "no such location"
+      end
+      i += 1
     end
   end
 end
